@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="icon" href="./pic/drive_logo.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Lexend:wght@100..900&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <!-- sweetAlert2 (library) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- fontawesom -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Drive Me</title>
+  </head>
+  <body>
+    <div class="hide user">
+      <button  class="opened" onclick="opened()">
+        <i class="fa-solid fa-circle-user"></i>
+      </button>
+      <button class="closed hide" onclick="closed()">
+        <i class="fa-solid fa-x"></i>
+      </button>
+    </div>
+
+    <div class="menu hide">
+      <ul >
+        
+        <li ><i class="fa-brands fa-google-drive"style="  font-size:4vh; display:flex; justify-self:center "></i></li> 
+        <li  id="home" onclick="closed()"><i class="fa-solid fa-house"></i>&nbsp;Home</li>
+        <li id="about" onclick="closed()"><i class="fa-solid fa-circle-info"></i>&nbsp;About</li>
+         <br>
+         <hr >
+         <li style="display: flex; align-items: center;" class="drive"><i class="fa-solid fa-address-card" style=" justify-self: center;  font-size:4vh; margin-left: 50px; align-content: center;"></i> &nbsp; &nbsp;Info</li>    
+             <div class="ul" ></div>
+             <br>
+             <hr >
+         <li><button class="logout" onclick="remove()"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;Logout</button></li>    
+         
+        </ul>
+    
+    </div>
+    <a href="#" class="m"></a>
+      
+  
+    <div class="sign_container">
+      <h1><i class="fa-brands fa-google-drive"></i>&nbsp;Drive Me</h1>
+      <div class="signup">
+        <h2><i class="fa-solid fa-chalkboard-user"></i>&nbsp; sign up</h2>
+        <input id="name" type="text" placeholder="User Name" required />
+        <input
+          id="age"
+          type="number"
+          min="18"
+          max="24"
+          placeholder="Age"
+          required
+        />
+        <input id="number" type="tel" placeholder="Phone Number" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
+        <input id="email" type="email" placeholder="Email" required />
+        <button class="button" onclick="signup()">
+          <i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp;SignUp
+        </button>
+      </div>
+    </div>
+    <main class="hide">
+      <h2>courses</h2>
+      <div class="container">
+        <a href="./control.html"class="card">
+          <h3>Control System</h3>
+          <img src="./pic/control.png" alt="control_img" />
+        </a>
+        <a href="./Advance computer programming.html" class="card" >
+          <h3>Advance Computer programming</h3>
+          <img src="./pic/ACP.png" alt="ACP" />
+        </a>
+        <a href="./communication.html" class="card" >
+          <h3>Introduction To Communication System</h3>
+          <img src="./pic/communication.png" alt="communication" />
+        </a>
+        <a href="./thermal.html" class="card" >
+          <h3>Thermal power</h3>
+          <img src="./pic/thermal.png" alt="thermal" />
+        </a>
+        <a href="./digital circuits.html" class="card" >
+          <h3>Digital Circuits</h3>
+          <img src="./pic/digital.png" alt="digital" />
+        </a>
+        <a href="./embedded.html" class="card" >
+          <h3>introduction to embedded</h3>
+          <img src="./pic/embedded.png" alt="embedded" />
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1LCkb8_SdW0g3BNy266bZ8KuFNZTh8Zos" class="card" >
+          <h3>Drive27</h3>
+          <img src="./pic/Screenshot 2025-02-10 115418.png" alt="embedded" />
+        </a>
+
+        <a href="
+        https://drive.google.com/drive/folders/1-3TtasKrdNnvoSvJv5QvDH9hAQAinxrb
+        
+        " class="card" target="_blank">
+          <h3>Drive26</h3>
+          <img src="./pic/Screenshot 2025-02-10 115418.png" alt="embedded" />
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/1RN5VapXzDZBi6sngz32F5rfixGZjT_uN
+
+        " class="card" target="_blank">
+          <h3>Drive25</h3>
+          <img src="./pic/Screenshot 2025-02-10 115418.png" alt="embedded" />
+        </a>
+      </div>
+    </main>
+    <footer class="hide">
+      <p><i style="display: flex; align-items: center;" class="fa-solid fa-computer"></i>&nbsp;Eng/Kiroloes Reda</p>
+    </footer>
+  </body>
+
+  <script>
+    let name = document.querySelector("#name");
+    let age = document.querySelector("#age");
+    let number = document.querySelector("#number");
+    let email = document.querySelector("#email");
+    let signUP = document.querySelector(".sign_container");
+    let main = document.querySelector("main");
+    let footer = document.querySelector("footer");
+    let M = document.querySelector(".m");
+    let user = document.querySelector(".user");
+    let btn_opend = document.querySelector(".opened");
+    let btn_closed = document.querySelector(".closed");
+    let menu = document.querySelector(".menu");
+    let ul = document.querySelector(".ul");
+  
+    function signup() {
+
+
+    
+     
+
+
+      if (!name.value || !age.value || !number.value || !email.value) {
+        Swal.fire({
+          title: "warning",
+          text: "please fill the fields",
+
+          icon: "warning",
+          iconColor: "red",
+          confirmButtonText:
+            '<i  class="fa-solid fa-thumbs-up"> </i> &nbsp; OK',
+          confirmButtonColor: "rgb(10, 45, 75)",
+        });
+        name.value = "";
+        age.value = "";
+        number.value = "";
+        email.value = "";
+      } else {
+        localStorage.setItem("name", name.value);
+        localStorage.setItem("age", age.value);
+        localStorage.setItem("number", number.value);
+        localStorage.setItem("email", email.value);
+
+        name.value = "";
+        age.value = "";
+        number.value = "";
+        email.value = "";
+
+       
+
+        signUP.classList.add("hide");
+
+        main.classList.remove("hide");
+
+        location.reload();
+
+      }
+    }
+    onload = function () {
+      
+      if (localStorage.getItem("name", name.value)) {
+        signUP.classList.add("hide");
+        main.classList.remove("hide");
+        M.classList.add("hide");
+        footer.classList.remove("hide");
+        user.classList.remove("hide");
+
+        
+        do{  
+      setTimeout(() => {
+        Swal.fire({
+          title: localStorage.getItem("name", name.value),
+          text: "welcome to you",
+
+          icon:"success",
+          iconColor: "green",
+          confirmButtonText:
+            '<i  class="fa-solid fa-thumbs-up"> </i> &nbsp; OK',
+          confirmButtonColor: "rgb(10, 45, 75)",
+        });
+}, 0)} while(1<0);
+      }
+
+ 
+    };
+
+    function opened() {
+      menu.classList.remove("hide");
+      btn_opend.style.display = "none";
+      btn_closed.style.display = "block";
+    }
+    function closed() {
+      menu.classList.add("hide");
+      btn_opend.style.display = "block";
+      btn_closed.style.display = "none";
+    }
+    ul.innerHTML += ` <li><i class="fa-solid fa-user"></i> ${localStorage.getItem(
+      "name",
+      name.value
+    )}</li> <li><i class="fa-solid fa-calendar"></i> ${localStorage.getItem(
+      "age",
+      age.value
+    )+" years" }</li> <li><i class="fa-solid fa-phone"></i> ${localStorage.getItem(
+      "number",
+       number.value
+    )}</li> <li><i class="fa-solid fa-envelope"></i> ${localStorage.getItem("email", email.value)}</li>`;
+
+    function remove(){
+       localStorage.clear();
+       location.reload();
+    }
+
+    console.log(localStorage.getItem("name", name.value));
+        console.log(localStorage.getItem("age", number.value));
+        console.log(localStorage.getItem("number", age.value));
+        console.log(localStorage.getItem("email", email.value));
+   
+  </script>
+</html>
