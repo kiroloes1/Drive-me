@@ -28,6 +28,12 @@
     <title>Drive Me</title>
   </head>
   <body>
+    <div id="loader">
+      <div class="spinner">
+        <div class="progress"></div>
+      </div>
+    </div>
+    </div>
     <div class="hide user">
       <button  class="opened" onclick="opened()">
         <i class="fa-solid fa-circle-user"></i>
@@ -81,7 +87,7 @@
       <h2>courses</h2>
       <div class="container">
         <a href="./control.html"class="card">
-          <h3>Control System</h3>
+          <h3>Energy and Renewable Energy</h3>
           <img src="./pic/control.png" alt="control_img" />
         </a>
         <a href="./Advance computer programming.html" class="card" >
@@ -145,6 +151,12 @@
     let btn_closed = document.querySelector(".closed");
     let menu = document.querySelector(".menu");
     let ul = document.querySelector(".ul");
+
+
+    window.addEventListener("load", function () {
+  document.getElementById("loader").style.display = "none";
+  // document.getElementById("content").classList.remove("hidden");
+});
   
     function signup() {
 
@@ -247,6 +259,7 @@
         console.log(localStorage.getItem("age", number.value));
         console.log(localStorage.getItem("number", age.value));
         console.log(localStorage.getItem("email", email.value));
+        number.getAttribute
    
   </script>
 </html>
